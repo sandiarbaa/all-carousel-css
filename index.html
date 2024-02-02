@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Self Slider Create</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+    <div class="slider">
+      <div class="slides">
+        <!-- radio input start -->
+        <!-- code untuk carousel 2 start-->
+        <!-- <input type="radio" name="radio-btn" id="radioL" />
+        <input type="radio" name="radio-btn" id="radioR" /> -->
+        <!-- code untuk carousel 2 end-->
+        
+        <!-- code untuk carousel 3 start -->
+        <!-- <input type="radio" name="radio-btn" id="radio1" checked/>
+        <input type="radio" name="radio-btn" id="radio2" />
+        <input type="radio" name="radio-btn" id="radio3" />
+        <input type="radio" name="radio-btn" id="radio4" /> -->
+        <!-- code untuk carousel 3 end -->
+        <!-- radio input end -->
+
+        <!-- slider -->
+        <div class="slide first">
+          <img src="image/1.jpeg" alt="img1" class="img" />
+        </div>
+        <div class="slide">
+          <img src="image/2.jpeg" alt="img1" class="img" />
+        </div>
+        <div class="slide">
+          <img src="image/3.jpeg" alt="img1" class="img" />
+        </div>
+        <div class="slide">
+          <img src="image/4.jpeg" alt="img1" class="img" />
+        </div>
+        <!-- slider -->
+
+        <!-- manual slide -->
+        <div class="manual-slide">
+          <!-- NOTE: Carousel 1 tidak butuh label jadi cukup nyalakan JS nya saja -->
+          
+          <!-- code untuk carousel 2 -->
+          <!-- <label for="radioL" class="btn-manual btn-manual1">⬅️</label>
+          <label for="radioR" class="btn-manual btn-manual2">➡️</label> -->
+          <!-- code untuk carousel 2 -->
+
+          <!-- code untuk carousel 3 -->
+          <!-- <label for="radio1" class="btn-manual btn-manual1"></label>
+          <label for="radio2" class="btn-manual btn-manual2"></label>
+          <label for="radio3" class="btn-manual btn-manual3"></label>
+          <label for="radio4" class="btn-manual btn-manual4"></label> -->
+          <!-- code untuk carousel 3 -->
+        </div>
+        <!-- manual slide -->
+      </div>
+    </div>
+    
+  <script>
+      const leftButton = document.getElementById("radioL");
+      const rightButton = document.getElementById("radioR");
+      const first = document.querySelector(".first");
+      let count = 0;
+
+      // Caoursel 1 | Automatic Slide
+      // setiap 3 detik elemen yg punya class first akan diberikan style margin-left: -20%, tetapi ketika margin-left sudah mencapai -80%, margin-left akan dikembalikan ke 0
+      // Carousel 1 start..
+      setInterval(() => {
+        count += -20;
+        if(count <= -80) {
+          count = 0;
+        }
+        first.style.marginLeft = count + "%";
+      }, 2000);
+      // Carousel 1 end..
+
+      // Caoursel 2 | Left and Right Arrow
+      // setiap rightButton di klik, maka count akan bertambah -20% dan setiap leftButton di klik, maka count akan berkurang 20%, dan itu akan menjadi value dari style margin-left elemen yg punya class first.
+      // Carousel 2 start..
+      // leftButton.addEventListener("click", function () {
+      //   if (count >= 0) {
+      //     return;
+      //   }
+      //   count += 20;
+      //   console.log(count);
+      //   first.style.marginLeft = count + "%";
+      // });
+
+      // rightButton.addEventListener("click", function () {
+      //   if (count <= -60) {
+      //     return;
+      // }
+      //   count += -20;
+      //   console.log(count);
+      //   first.style.marginLeft = count + "%";
+      //   });
+      // Carousel 2 end..
+    </script>
+  </body>
+</html>
+
+<!-- carousel 1 | Automatic Slide -->
+<!-- carousel 2 | left and right arrow -->
+<!-- carousel 3 | manual mark active | tanpa JS hanya CSS, jadi liat style.css-->
