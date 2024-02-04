@@ -12,8 +12,8 @@
       <div class="slides">
         <!-- radio input start -->
         <!-- code untuk carousel 2 start-->
-        <!-- <input type="radio" name="radio-btn" id="radioL" />
-        <input type="radio" name="radio-btn" id="radioR" /> -->
+        <input type="radio" name="radio-btn" id="radioL" />
+        <input type="radio" name="radio-btn" id="radioR" />
         <!-- code untuk carousel 2 end-->
         
         <!-- code untuk carousel 3 start -->
@@ -44,8 +44,8 @@
           <!-- NOTE: Carousel 1 tidak butuh label jadi cukup nyalakan JS nya saja -->
           
           <!-- code untuk carousel 2 -->
-          <!-- <label for="radioL" class="btn-manual btn-manual1">⬅️</label>
-          <label for="radioR" class="btn-manual btn-manual2">➡️</label> -->
+          <label for="radioL" class="btn-manual btn-manual1">⬅️</label>
+          <label for="radioR" class="btn-manual btn-manual2">➡️</label>
           <!-- code untuk carousel 2 -->
 
           <!-- code untuk carousel 3 -->
@@ -68,35 +68,33 @@
       // Caoursel 1 | Automatic Slide
       // setiap 3 detik elemen yg punya class first akan diberikan style margin-left: -20%, tetapi ketika margin-left sudah mencapai -80%, margin-left akan dikembalikan ke 0
       // Carousel 1 start..
-      setInterval(() => {
-        count += -20;
-        if(count <= -80) {
-          count = 0;
-        }
-        first.style.marginLeft = count + "%";
-      }, 2000);
+      // setInterval(() => {
+      //   count += -20;
+      //   if(count <= -80) {
+      //     count = 0;
+      //   }
+      //   first.style.marginLeft = count + "%";
+      // }, 2000);
       // Carousel 1 end..
 
       // Caoursel 2 | Left and Right Arrow
       // setiap rightButton di klik, maka count akan bertambah -20% dan setiap leftButton di klik, maka count akan berkurang 20%, dan itu akan menjadi value dari style margin-left elemen yg punya class first.
       // Carousel 2 start..
-      // leftButton.addEventListener("click", function () {
-      //   if (count >= 0) {
-      //     return;
-      //   }
-      //   count += 20;
-      //   console.log(count);
-      //   first.style.marginLeft = count + "%";
-      // });
+      leftButton.addEventListener("click", function () {
+        if (count >= 0) {
+          return;
+        }
+        count += 20;
+        first.style.marginLeft = count + "%";
+      });
 
-      // rightButton.addEventListener("click", function () {
-      //   if (count <= -60) {
-      //     return;
-      // }
-      //   count += -20;
-      //   console.log(count);
-      //   first.style.marginLeft = count + "%";
-      //   });
+      rightButton.addEventListener("click", function () {
+        if (count <= -60) {
+          return;
+      }
+        count += -20;
+        first.style.marginLeft = count + "%";
+        });
       // Carousel 2 end..
     </script>
   </body>
